@@ -2,8 +2,7 @@ import urllib
 import json
 
 def wuweather(phenny, input):
-	#loc = input.group(2)
-	loc = input
+	loc = input.group(2)
 
 	#grab weather from api
 	try:
