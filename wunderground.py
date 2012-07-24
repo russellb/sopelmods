@@ -12,6 +12,24 @@ def wuweather(phenny, input):
     if not weather:
         return
 
+    #does the response contain an error
+    if 'error' in weather['response']:
+        phenny.say("wuweather: %s" % weather['response']['error']['description'])
+        return
+    #does the response contain extra 'results'
+    elif 'results' in weather['response']:
+        output = 'wuweather: Ambigious Search, options: '
+        counter = 0
+        for index in weather['response']['results']:
+            if counter == 0:
+                output += "%s %s %s " % (index['city'], index['state'], index['country'])
+            else:
+                output += "/ %s %s %s " % (index['city'], index['state'], index['country'])                
+            counter += 1
+        phenny.say(output)
+        return
+
+    #if we made it here, everything should be good
     try:
         #format the city name
         city = "[%s, %s, %s]" % \
@@ -20,20 +38,28 @@ def wuweather(phenny, input):
         weather['current_observation']['display_location']['country'])
 
         #output the averages, sunrise, moon
-        phenny.say("%s Avg High: %sF, %sC Low: %sF, %sC / Sunrise: %s:%s Sunset: %s:%s / Moon: %s%%\n" % \
+        #some locations don't have an almanac
+        if weather['almanac']['airport_code'] != "":
+            almanac_output = "Avg High: %sF, %sC Low: %sF, %sC " % \
+            (weather['almanac']['temp_high']['normal']['F'],
+            weather['almanac']['temp_high']['normal']['C'],
+            weather['almanac']['temp_low']['normal']['F'],
+            weather['almanac']['temp_low']['normal']['C'])
+        else:
+            almanac_output = ""
+
+        #output sunrise w/ almanac if available
+        phenny.say("%s %sSunrise: %s:%s Sunset: %s:%s" % \
         (city,
-        weather['almanac']['temp_high']['normal']['F'],
-        weather['almanac']['temp_high']['normal']['C'],
-        weather['almanac']['temp_low']['normal']['F'],
-        weather['almanac']['temp_low']['normal']['C'],
+        almanac_output,
         weather['moon_phase']['sunrise']['hour'],
         weather['moon_phase']['sunrise']['minute'],
         weather['moon_phase']['sunset']['hour'],
-        weather['moon_phase']['sunset']['minute'],
-        weather['moon_phase']['percentIlluminated']))
+        weather['moon_phase']['sunset']['minute']))
+
 
         #output the current weather
-        phenny.say("%s Current: %s %sF, %sC Humidity: %s, Wind: %s\n" % \
+        phenny.say("%s Current: %s %sF, %sC Humidity: %s, Wind: %s" % \
         (city,
         weather['current_observation']['weather'],
         weather['current_observation']['temp_f'],
@@ -51,7 +77,7 @@ def wuweather(phenny, input):
             else:
                 day = index['date']['weekday']
 
-            phenny.say("%s %s: %s [POP: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s, Min: %s, Avg: %s] Wind: [%smph, %skph]\n" % \
+            phenny.say("%s %s: %s [POP: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s%%, Min: %s%%, Avg: %s%%] Wind: [%smph, %skph]" % \
             (city,
             day,
             index['conditions'],
@@ -67,6 +93,7 @@ def wuweather(phenny, input):
             index['avewind']['kph']))
             counter +=1
             if counter >= 3: break
+        phenny.say("%s URL: %s" % (city, weather['current_observation']['forecast_url']))
     except:
         return
 
