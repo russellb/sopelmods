@@ -98,4 +98,4 @@ def wuweather(phenny, input):
     except:
         return
 
-gweather.commands = ['wuweather']
+wuweather.commands = ['wuweather']
