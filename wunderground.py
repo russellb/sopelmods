@@ -44,10 +44,16 @@ def wuweather(phenny, input):
         #output first 3 days of forcast (today, tomorrow, second day)
         counter = 0
         for index in weather['forecast']['simpleforecast']['forecastday']:
-            counter +=1
+            if counter == 0:
+                day = 'Today'
+            elif counter == 1:
+                day = 'Tomorrow'
+            else:
+                day = index['date']['weekday']
+
             phenny.say("%s %s: %s [Chance of Percipitation: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s, Min: %s, Avg: %s] Wind: [%smph, %skph]\n" % \
             (city,
-            index['date']['weekday'],
+            day,
             index['conditions'],
             index['pop'],
             index['high']['fahrenheit'],
@@ -59,7 +65,8 @@ def wuweather(phenny, input):
             index['avehumidity'],
             index['avewind']['mph'],
             index['avewind']['kph']))
-            if counter >= 2: break
+            counter +=1
+            if counter >= 3: break
     except:
         return
 
