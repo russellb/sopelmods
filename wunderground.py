@@ -51,7 +51,7 @@ def wuweather(phenny, input):
             else:
                 day = index['date']['weekday']
 
-            phenny.say("%s %s: %s [Chance of Percipitation: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s, Min: %s, Avg: %s] Wind: [%smph, %skph]\n" % \
+            phenny.say("%s %s: %s [POP: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s, Min: %s, Avg: %s] Wind: [%smph, %skph]\n" % \
             (city,
             day,
             index['conditions'],
