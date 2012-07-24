@@ -93,7 +93,6 @@ def wuweather(phenny, input):
             index['avewind']['kph']))
             counter +=1
             if counter >= 3: break
-        
         phenny.say("%s URL: %s" % (city, weather['current_observation']['forecast_url']))
     except:
         return
