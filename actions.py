@@ -49,5 +49,5 @@ def troll(phenny, input):
 troll.commands = ['troll','trollface']
 
 def trololo(phenny, input):
-  phenny.say('http://bit.ly/SJdlXh')
+    phenny.say('http://bit.ly/SJdlXh')
 trololo.commands = ['trolo', 'trololo', 'trolololo']
