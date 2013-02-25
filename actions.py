@@ -12,6 +12,11 @@ def untable(phenny, input):
     phenny.say('┬┬ ノ(゜-゜ノ)')
 untable.commands = ['untable', 'putitback', 'unrage']
 
+def dapper(phenny, input):
+    phenny.say('┌─┐')
+    phenny.say('┴─┴')
+    phenny.say('ಠ_ರೃ')
+dapper.commands = ['dapper']
 
 def joyful(phenny, input):
     joyful_emotes = ['🙌', '😀', '😁', '😂', '😃', '😄', '😅']
