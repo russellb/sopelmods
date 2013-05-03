@@ -78,3 +78,9 @@ def notbad(phenny, input):
     phenny.say('▄▀▀░░░███▄█▄░░░░░░▄▀░░░░░░█▄░░')
     phenny.say('█░░░░░███▄█▄░░░░░░▄▀░░░░░░░▀█▄')
 notbad.commands = ['notbad']
+
+def dealwithit(phenny, input):
+    phenny.say('(•_•)')
+    phenny.say('( •_•)>⌐■-■')
+    phenny.say('(⌐■_■)')
+dealwithit.commands = ['dealwithit']
