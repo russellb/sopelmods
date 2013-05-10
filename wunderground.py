@@ -1,7 +1,7 @@
 import urllib
 import json
 
-def wuweather(phenny, input):
+def wuweather_full(phenny, input, verbose=True):
     loc = input.group(2)
 
     #grab weather from api
@@ -48,15 +48,15 @@ def wuweather(phenny, input):
         else:
             almanac_output = ""
 
-        #output sunrise w/ almanac if available
-        phenny.say("%s %sSunrise: %s:%s Sunset: %s:%s" % \
-        (city,
-        almanac_output,
-        weather['moon_phase']['sunrise']['hour'],
-        weather['moon_phase']['sunrise']['minute'],
-        weather['moon_phase']['sunset']['hour'],
-        weather['moon_phase']['sunset']['minute']))
-
+        if verbose:
+            #output sunrise w/ almanac if available
+            phenny.say("%s %sSunrise: %s:%s Sunset: %s:%s" % \
+            (city,
+            almanac_output,
+            weather['moon_phase']['sunrise']['hour'],
+            weather['moon_phase']['sunrise']['minute'],
+            weather['moon_phase']['sunset']['hour'],
+            weather['moon_phase']['sunset']['minute']))
 
         #output the current weather
         phenny.say("%s Current: %s %sF, %sC Humidity: %s, Wind: %s" % \
@@ -66,6 +66,9 @@ def wuweather(phenny, input):
         weather['current_observation']['temp_c'],
         weather['current_observation']['relative_humidity'],
         weather['current_observation']['wind_string']))
+
+        if not verbose:
+            return
 
         #output first 3 days of forcast (today, tomorrow, second day)
         counter = 0
@@ -97,4 +100,12 @@ def wuweather(phenny, input):
     except:
         return
 
+
+def wuweatherverbose(phenny, input):
+    return wuweather_full(phenny, input)
+wuweatherverbose.commands = ['wuweatherverbose']
+
+
+def wuweather(phenny, input):
+    return wuweather_full(phenny, input, verbose=False)
 wuweather.commands = ['wuweather']
