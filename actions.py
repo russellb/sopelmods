@@ -19,7 +19,7 @@ def dapper(phenny, input):
 dapper.commands = ['dapper']
 
 def joyful(phenny, input):
-    joyful_emotes = ['🙌', '😀', '😁', '😂', '😃', '😄', '😅']
+    joyful_emotes = ['🙌', '😀', '😁', '😂', '😃', '😄', '😅', '\(סּںסּَ`)/ۜ']
     phenny.say(choice(joyful_emotes))
 joyful.commands = ['huzzuh', 'awesome', 'happy', 'smile']
 
