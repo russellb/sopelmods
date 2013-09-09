@@ -88,3 +88,8 @@ dealwithit.commands = ['dealwithit']
 def glare(phenny, input):
     phenny.say('ಠ_ಠ')
 glare.commands = ['glare', 'eyes', 'disapprove']
+
+
+def facepalm(phenny, input):
+    phenny.say('(>ლ)')
+facepalm.commands = ['facepalm']
