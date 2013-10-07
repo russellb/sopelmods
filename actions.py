@@ -32,7 +32,7 @@ finger.commands = ['finger']
 
 def umadbro(phenny, input):
     phenny.say('¯\_(ツ)_/¯')
-umadbro.commands = ['umadbro', 'shrug', 'idunno']
+umadbro.commands = ['umadbro', 'shrug', 'idunno', 'notsure']
 
 
 def troll(phenny, input):
