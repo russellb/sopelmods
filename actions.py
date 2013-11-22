@@ -94,3 +94,8 @@ glare.commands = ['glare', 'eyes', 'disapprove']
 def facepalm(phenny, input):
     phenny.say('(>ლ)')
 facepalm.commands = ['facepalm']
+
+
+def tothemoon(phenny, input):
+   phenny.say('┗(°0°)┛')
+tothemoon.commands = ['tothemoon']
