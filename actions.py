@@ -99,3 +99,11 @@ facepalm.commands = ['facepalm']
 def tothemoon(phenny, input):
    phenny.say('┗(°0°)┛')
 tothemoon.commands = ['tothemoon']
+
+
+def postal(phenny, input):
+    choices = [
+        "' ̿'\̵͇̿̿\з=(◕_◕)=ε/̵͇̿̿/'̿'̿ ̿'",
+        "¯¯̿̿¯̿̿'̿̿̿̿̿̿̿'̿̿'̿̿̿̿̿'̿̿̿)͇̿̿)̿̿̿̿ '̿̿̿̿̿̿\̵͇̿̿\=(•̪̀●́)=o/̵͇̿̿/'̿̿ ̿ ̿̿",
+    ]
+    phenny.say(choice(choices))

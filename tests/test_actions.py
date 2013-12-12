@@ -59,3 +59,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_tothemoon(self):
         actions.tothemoon(tests.utils.Phenny(), '')
+
+    def test_postal(self):
+        actions.postal(tests.utils.Phenny(), '')
