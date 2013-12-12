@@ -111,10 +111,10 @@ postal.commands = ['postal']
 
 
 def ping(phenny, input):
-    phenny.say('( •_•)O*¯`·.')
+    phenny.say('( •_•)O*¯`·.   |')
 ping.commands = ['ping']
 
 
 def pong(phenny, input):
-    phenny.say('.·´¯`°Q(•_• )')
+    phenny.say('               |   .·´¯`°Q(•_• )')
 pong.commands = ['pong']
