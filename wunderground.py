@@ -3,10 +3,11 @@ import json
 
 def wuweather_full(phenny, input, verbose=True):
     loc = input.group(2)
+    pws = loc.startswith('pws:') and '1' or '0'
 
     #grab weather from api
     try:
-        weather = json.loads(urllib.urlopen('http://api.wunderground.com/api/587a76efcc30bee2/conditions/almanac/astronomy/forecast/pws:0/q/' + loc +'.json').read())
+        weather = json.loads(urllib.urlopen('http://api.wunderground.com/api/587a76efcc30bee2/conditions/almanac/astronomy/forecast/pws:' + pws + '/q/' + loc +'.json').read())
     except:
         return
     if not weather:
@@ -32,10 +33,14 @@ def wuweather_full(phenny, input, verbose=True):
     #if we made it here, everything should be good
     try:
         #format the city name
+        if pws == '1':
+            loc_key = 'observation_location'
+        else:
+            loc_key = 'display_location'
         city = "[%s, %s, %s]" % \
-        (weather['current_observation']['display_location']['city'],
-        weather['current_observation']['display_location']['state'],
-        weather['current_observation']['display_location']['country'])
+        (weather['current_observation'][loc_key]['city'],
+        weather['current_observation'][loc_key]['state'],
+        weather['current_observation'][loc_key]['country'])
 
         #output the averages, sunrise, moon
         #some locations don't have an almanac
