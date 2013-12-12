@@ -107,3 +107,4 @@ def postal(phenny, input):
         "¯¯̿̿¯̿̿'̿̿̿̿̿̿̿'̿̿'̿̿̿̿̿'̿̿̿)͇̿̿)̿̿̿̿ '̿̿̿̿̿̿\̵͇̿̿\=(•̪̀●́)=o/̵͇̿̿/'̿̿ ̿ ̿̿",
     ]
     phenny.say(choice(choices))
+postal.commands = ['postal']
