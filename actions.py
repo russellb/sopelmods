@@ -108,3 +108,13 @@ def postal(phenny, input):
     ]
     phenny.say(choice(choices))
 postal.commands = ['postal']
+
+
+def ping(phenny, input):
+    phenny.say('( •_•)O*¯`·.')
+ping.commands = ['ping']
+
+
+def pong(phenny, input):
+    phenny.say('.·´¯`°Q(•_• )')
+pong.commands = ['pong']

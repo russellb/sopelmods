@@ -70,3 +70,9 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_postal(self):
         self._test_action('postal')
+
+    def test_ping(self):
+        self._test_action('ping')
+
+    def test_pong(self):
+        self._test_action('pong')
