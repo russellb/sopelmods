@@ -18,10 +18,10 @@ def dapper(phenny, input):
     phenny.say('ಠ_ರೃ')
 dapper.commands = ['dapper']
 
-def joyful(phenny, input):
+def smile(phenny, input):
     joyful_emotes = ['🙌', '😀', '😁', '😂', '😃', '😄', '😅', '\(סּںסּَ`)/ۜ', '【ツ】']
     phenny.say(choice(joyful_emotes))
-joyful.commands = ['huzzuh', 'awesome', 'happy', 'smile']
+smile.commands = ['huzzuh', 'awesome', 'happy', 'smile']
 
 
 def finger(phenny, input):

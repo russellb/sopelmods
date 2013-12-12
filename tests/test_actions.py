@@ -21,44 +21,52 @@ import tests.utils
 class ActionsTestCase(unittest.TestCase):
     # Make sure actions don't blow up
 
+    def _test_action(self, action):
+        func = getattr(actions, action)
+        func(tests.utils.Phenny(), '')
+        if not hasattr(func, 'commands'):
+            raise Exception('Missing commands attribute on function %s' %
+                            action)
+        self.assertTrue(action in func.commands)
+
     def test_table(self):
-        actions.table(tests.utils.Phenny(), '')
+        self._test_action('table')
 
     def test_untable(self):
-        actions.untable(tests.utils.Phenny(), '')
+        self._test_action('untable')
 
     def test_dapper(self):
-        actions.dapper(tests.utils.Phenny(), '')
+        self._test_action('dapper')
 
-    def test_joyful(self):
-        actions.joyful(tests.utils.Phenny(), '')
+    def test_smile(self):
+        self._test_action('smile')
 
     def test_finger(self):
-        actions.finger(tests.utils.Phenny(), '')
+        self._test_action('finger')
 
     def test_umadbro(self):
-        actions.umadbro(tests.utils.Phenny(), '')
+        self._test_action('umadbro')
 
     def test_troll(self):
-        actions.troll(tests.utils.Phenny(), '')
+        self._test_action('troll')
 
     def test_trololo(self):
-        actions.trololo(tests.utils.Phenny(), '')
+        self._test_action('trololo')
 
     def test_notbad(self):
-        actions.notbad(tests.utils.Phenny(), '')
+        self._test_action('notbad')
 
     def test_dealwithit(self):
-        actions.dealwithit(tests.utils.Phenny(), '')
+        self._test_action('dealwithit')
 
     def test_glare(self):
-        actions.glare(tests.utils.Phenny(), '')
+        self._test_action('glare')
 
     def test_facepalm(self):
-        actions.facepalm(tests.utils.Phenny(), '')
+        self._test_action('facepalm')
 
     def test_tothemoon(self):
-        actions.tothemoon(tests.utils.Phenny(), '')
+        self._test_action('tothemoon')
 
     def test_postal(self):
-        actions.postal(tests.utils.Phenny(), '')
+        self._test_action('postal')
