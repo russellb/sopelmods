@@ -31,6 +31,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 To test wunderground changes:
 
-```python test_wunderground.py pws:KORHILLS16
+```python wunderground.py pws:KORHILLS16
 [Hillsboro at 231st, Hillsboro, Oregon, US] Current: Light Freezing Fog 24.2F, -4.3C Humidity: 98%, Wind: Calm
 ```

@@ -1,5 +1,10 @@
-import urllib
 import json
+import re
+import sys
+import urllib
+
+import tests.utils
+
 
 def wuweather_full(phenny, input, verbose=True):
     loc = input.group(2)
@@ -114,3 +119,7 @@ wuweatherverbose.commands = ['wuweatherverbose']
 def wuweather(phenny, input):
     return wuweather_full(phenny, input, verbose=False)
 wuweather.commands = ['wuweather']
+
+
+if __name__ == '__main__':
+    wuweather(tests.utils.Phenny(), re.match('()(.*)', sys.argv[1]))
