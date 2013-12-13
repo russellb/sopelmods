@@ -3,8 +3,6 @@ import re
 import sys
 import urllib
 
-import tests.utils
-
 
 def wuweather_full(phenny, input, verbose=True):
     loc = input.group(2)
@@ -122,4 +120,5 @@ wuweather.commands = ['wuweather']
 
 
 if __name__ == '__main__':
+    import tests.utils
     wuweather(tests.utils.Phenny(), re.match('()(.*)', sys.argv[1]))
