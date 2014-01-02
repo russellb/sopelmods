@@ -22,7 +22,7 @@ def wuweather_full(phenny, input, verbose=True):
         return
     #does the response contain extra 'results'
     elif 'results' in weather['response']:
-        output = 'wuweather: Ambigious Search, options: '
+        output = 'wuweather: Ambiguous Search, options: '
         counter = 0
         for index in weather['response']['results']:
             if counter == 0:
