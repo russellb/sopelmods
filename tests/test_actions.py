@@ -76,3 +76,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_pong(self):
         self._test_action('pong')
+
+    def test_hi(self):
+        self._test_action('hi')

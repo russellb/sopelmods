@@ -118,3 +118,9 @@ ping.commands = ['ping']
 def pong(phenny, input):
     phenny.say('               |   .·´¯`°Q(•_• )')
 pong.commands = ['pong']
+
+
+def hi(phenny, input):
+    choices = ['o/', '\o']
+    phenny.say(choice(choices))
+hi.commands = ['hi', 'ohai']
