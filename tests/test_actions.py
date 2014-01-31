@@ -59,6 +59,9 @@ class ActionsTestCase(unittest.TestCase):
     def test_dealwithit(self):
         self._test_action('dealwithit')
 
+    def test_pirate(self):
+        self._test_action('pirate')
+
     def test_glare(self):
         self._test_action('glare')
 
