@@ -131,4 +131,4 @@ pong.commands = ['pong']
 def hi(phenny, input):
     choices = ['o/', '\o']
     phenny.say(choice(choices))
-hi.commands = ['hi', 'ohai']
+hi.commands = ['hi', 'ohai', 'hello', 'greetings', 'hola', 'bonjour']
