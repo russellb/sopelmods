@@ -14,12 +14,12 @@ def format_defn(defn, num, max):
 
 def urban(phenny, input):
     baseurl = 'http://api.urbandictionary.com/v0/define?term='
-    input = input.group(2).strip()
 
-    if not input:
+    if not input.group(2):
         phenny.say('Usage: .urban <word> [definition number]')
         return
 
+    input = input.group(2).strip()
     words = input.split()
     try:
         num = int(words[-1])
