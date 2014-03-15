@@ -13,7 +13,7 @@ def format_defn(defn, num, max):
 
 
 def urban(phenny, input):
-    baseurl = 'http://api.urbandictionary.com/v0/define?term='
+    baseurl = 'http://api.urbandictionary.com/v0/'
 
     if not input.group(2):
         phenny.say('Usage: .urban <word> [definition number]')
@@ -27,12 +27,17 @@ def urban(phenny, input):
     except ValueError:
         num = 1
 
+    if input == 'random':
+        url = baseurl + 'random'
+    else:
+        url = baseurl + 'define?term=' + input
+
     try:
-        result = json.loads(urllib.urlopen(baseurl + input).read())
+        result = json.loads(urllib.urlopen(url).read())
     except:
         return
 
-    if not result or "result_type" not in result:
+    if not result or "list" not in result:
         return
 
     idx = num - 1
