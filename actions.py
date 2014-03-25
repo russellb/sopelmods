@@ -1,16 +1,39 @@
 # -*- coding: utf-8 -*-
 
 from random import choice
+import time
 
 
 def table(phenny, input):
-    phenny.say('(╯°□°）╯︵ ┻━┻')
+    rage = [
+        '(╯°□°）╯︵ ┻━┻',
+        '┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻',
+        '（╯°□°）╯︵(\ .o.)\\',
+        '(╯°□°)╯︵ ┻━┻ ︵ ╯(°□° ╯)',
+    ]
+    phenny.say(choice(rage))
 table.commands = ['table', 'rage']
 
 
 def untable(phenny, input):
     phenny.say('┬┬ ノ(゜-゜ノ)')
 untable.commands = ['untable', 'putitback', 'unrage']
+
+
+def raaage(phenny, input):
+    rage = [
+        '┬──┬ ノ( ゜-゜ノ)',
+        '┬──┬◡ﾉ(° -°ﾉ)',
+        '(╯°□°）╯︵ ┻━┻',
+        '┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻',
+        '（╯°□°）╯︵(\ .o.)\\',
+        '(/ﾟДﾟ)/',
+    ]
+    for r in rage:
+        phenny.say(r)
+        time.sleep(0.5)
+raaage.commands = ['raaage', 'RAAAGE', 'ultrarage']
+
 
 def dapper(phenny, input):
     phenny.say('┌─┐')

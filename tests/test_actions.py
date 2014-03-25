@@ -35,6 +35,9 @@ class ActionsTestCase(unittest.TestCase):
     def test_untable(self):
         self._test_action('untable')
 
+    def test_raaage(self):
+        self._test_action('raaage')
+
     def test_dapper(self):
         self._test_action('dapper')
 
