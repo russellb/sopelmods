@@ -10,6 +10,7 @@ def table(phenny, input):
         '┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻',
         '（╯°□°）╯︵(\ .o.)\\',
         '(╯°□°)╯︵ ┻━┻ ︵ ╯(°□° ╯)',
+        '(ノಠ益ಠ)ノ彡┻━┻',
     ]
     phenny.say(choice(rage))
 table.commands = ['table', 'rage']
