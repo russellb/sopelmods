@@ -156,3 +156,7 @@ def hi(phenny, input):
     choices = ['o/', '\o']
     phenny.say(choice(choices))
 hi.commands = ['hi', 'ohai', 'hello', 'greetings', 'hola', 'bonjour']
+
+def fail(phenny, input):
+    phenny.say('http://www.youtube.com/watch?v=WtNHuqHWefU')
+fail.commands = ['fail', 'dummy', 'dumber', 'stupid']
