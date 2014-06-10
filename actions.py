@@ -165,7 +165,7 @@ fail.commands = ['fail', 'dummy', 'dumber', 'stupid']
 
 def boggle(phenny, input):
     phenny.say('           .--.')
-    phenny.say('         .'    '.')
+    phenny.say('         .\'    \'.')
     phenny.say('        /  ~~~~  \\')
     phenny.say('       ( __    __ )')
     phenny.say('      /|<o->  <o->|\\')
