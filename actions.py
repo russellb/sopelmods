@@ -157,6 +157,25 @@ def hi(phenny, input):
     phenny.say(choice(choices))
 hi.commands = ['hi', 'ohai', 'hello', 'greetings', 'hola', 'bonjour']
 
+
 def fail(phenny, input):
     phenny.say('http://www.youtube.com/watch?v=WtNHuqHWefU')
 fail.commands = ['fail', 'dummy', 'dumber', 'stupid']
+
+
+def boggle(phenny, input):
+    phenny.say('           .--.')
+    phenny.say('         .'    '.')
+    phenny.say('        /  ~~~~  \\')
+    phenny.say('       ( __    __ )')
+    phenny.say('      /|<o->  <o->|\\')
+    phenny.say('     ( |    ^^    | )')
+    phenny.say('    _ ) \   __   / /')
+    phenny.say('   /##\  \_(__)_/ /')
+    phenny.say('  /####) )#\__// (')
+    phenny.say(' /####( |##| |#\  \\')
+    phenny.say('(#####| |##(_/##\_/\\')
+    phenny.say(' \####(_)###########\\')
+    phenny.say('   \#################)')
+    phenny.say('    \/##############/')
+boggle.commands = ['boggle', 'thescream']

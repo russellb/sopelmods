@@ -85,3 +85,9 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_hi(self):
         self._test_action('hi')
+
+    def test_fail(self):
+        self._test_action('fail')
+
+    def test_boggle(self):
+        self._test_action('boggle')
