@@ -184,3 +184,13 @@ boggle.commands = ['boggle', 'thescream']
 def yay(phenny, input):
     phenny.say('\o/')
 yay.commands = ['yay', 'woot', 'w00t']
+
+
+def shithitsfan(phenny, input):
+    phenny.say('https://www.youtube.com/watch?v=aZdp46Jen_w')
+shithitsfan.commands = ['shithitsfan']
+
+
+def fishslap(phenny, input):
+    phenny.say('https://www.youtube.com/watch?v=IhJQp-q1Y1s')
+fishslap.commands = ['fishslap']
