@@ -179,3 +179,8 @@ def boggle(phenny, input):
     phenny.say('   \#################)')
     phenny.say('    \/##############/')
 boggle.commands = ['boggle', 'thescream']
+
+
+def yay(phenny, input):
+    phenny.say('\o/')
+yay.commands = ['yay', 'woot', 'w00t']
