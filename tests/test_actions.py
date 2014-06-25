@@ -91,3 +91,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_boggle(self):
         self._test_action('boggle')
+
+    def test_makeitrain(self):
+        self._test_action('makeitrain')

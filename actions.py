@@ -194,3 +194,12 @@ shithitsfan.commands = ['shithitsfan']
 def fishslap(phenny, input):
     phenny.say('https://www.youtube.com/watch?v=IhJQp-q1Y1s')
 fishslap.commands = ['fishslap']
+
+
+def makeitrain(phenny, input):
+    phenny.say('[̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅]')
+    phenny.say('')
+    phenny.say('[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]')
+    phenny.say('')
+    phenny.say('[̲̅$̲̅(̲̅1̲̅)̲̅$̲̅]')
+makeitrain.commands = ['makeitrain']
