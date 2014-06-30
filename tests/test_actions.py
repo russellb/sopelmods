@@ -94,3 +94,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_makeitrain(self):
         self._test_action('makeitrain')
+
+    def test_failboat(self):
+        self._test_action('failboat')

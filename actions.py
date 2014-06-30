@@ -203,3 +203,13 @@ def makeitrain(phenny, input):
     phenny.say('')
     phenny.say('[̲̅$̲̅(̲̅1̲̅)̲̅$̲̅]')
 makeitrain.commands = ['makeitrain']
+
+
+def failboat(phenny, input):
+    phenny.say('    __4_____')
+    phenny.say(' _  \F\A\I\L\\')
+    phenny.say('<\'\ /_/_/_/_/')
+    phenny.say(' ((____!_____/)')
+    phenny.say(' \\0\\0\\0\\0\\0\/')
+    phenny.say(' ~~~~~~~~~~~~~~~')
+failboat.commands = ['failboat']
