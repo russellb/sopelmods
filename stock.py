@@ -18,13 +18,13 @@ import sys
 
 
 def get_quote(symbol):
-    base_url = 'http://finance.google.com/finance?q='
-    content = urllib.urlopen(base_url + symbol).read()
+    url = 'http://finance.google.com/finance?q=%s' % symbol
+    content = urllib.urlopen(url).read()
     m = re.search('id="ref_(.*?)">(.*?)<', content)
     if m:
         quote = m.group(2)
     else:
-        quote = 'no quote available for: ' + symbol
+        quote = 'no quote available for: "%s"' % symbol
         return quote
 
     m = re.search('class="chg" id="ref_\d+_c">(.*?)<', content)

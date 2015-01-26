@@ -213,3 +213,18 @@ def failboat(phenny, input):
     phenny.say(' \\0\\0\\0\\0\\0\/')
     phenny.say(' ~~~~~~~~~~~~~~~')
 failboat.commands = ['failboat']
+
+
+def beerme(phenny, input):
+    phenny.say('     ,-"-.__,-"-.__,-"-..')
+    phenny.say('    ( C>  )( C>  )( C>  ))')
+    phenny.say('   /.`-_-\'||`-_-\'||`-_-\'/')
+    phenny.say('  /-"-.--,-"-.--,-"-.--/|')
+    phenny.say(' ( C>  )( C>  )( C>  )/ |')
+    phenny.say('(|`-_-\',.`-_-\',.`-_-\'/  |')
+    phenny.say(' `-----++-----++----\'|  |')
+    phenny.say(' |     ||     ||     |-\'')
+    phenny.say(' |     ||     ||     |')
+    phenny.say(' |     ||     ||     |')
+    phenny.say('  `-_-\'  `-_-\'  `-_-\'')
+beerme.commands = ['beerme']
