@@ -100,3 +100,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_beerme(self):
         self._test_action('beerme')
+
+    def test_halibut(self):
+        self._test_action('halibut')

@@ -228,3 +228,8 @@ def beerme(phenny, input):
     phenny.say(' |     ||     ||     |')
     phenny.say('  `-_-\'  `-_-\'  `-_-\'')
 beerme.commands = ['beerme']
+
+
+def halibut(phenny, input):
+    phenny.say('><}}}}}*>')
+halibut.commands = ['halibut']
