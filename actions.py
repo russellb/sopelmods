@@ -233,3 +233,7 @@ beerme.commands = ['beerme']
 def halibut(phenny, input):
     phenny.say('><}}}}}*>')
 halibut.commands = ['halibut']
+
+def pabelanger(phenny, input):
+    phenny.say('http://media.giphy.com/media/R4mn3MfNRmlCU/200.gif')
+pabelanger.commands = ['pabelanger', 'paul', 'woahdance']
