@@ -103,3 +103,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_halibut(self):
         self._test_action('halibut')
+
+    def test_dundundun(self):
+        self._test_action('dundundun')
