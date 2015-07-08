@@ -106,3 +106,6 @@ class ActionsTestCase(unittest.TestCase):
 
     def test_dundundun(self):
         self._test_action('dundundun')
+
+    def test_meditate(self):
+        self._test_action('meditate')

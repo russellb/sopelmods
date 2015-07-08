@@ -244,3 +244,8 @@ pabelanger.commands = ['pabelanger', 'paul', 'woahdance']
 def dundundun(phenny, input):
     phenny.say('https://www.youtube.com/watch?v=cphNpqKpKc4')
 dundundun.commands = ['dundundun']
+
+
+def meditate(phenny, input):
+    phenny.say('https://vimeo.com/132790897')
+meditate.commands = ['meditate']
