@@ -67,11 +67,13 @@ def wuweather_full(phenny, input, verbose=True):
             weather['moon_phase']['sunset']['minute']))
 
         #output the current weather
-        phenny.say("%s Current: %s %sF, %sC Humidity: %s, Wind: %s" % \
+        phenny.say("%s Current: %s %sF, %sC (Feels like: %sF, %sC), Humidity: %s, Wind: %s" % \
         (city,
         weather['current_observation']['weather'],
         weather['current_observation']['temp_f'],
         weather['current_observation']['temp_c'],
+        weather['current_observation']['feelslike_f'],
+        weather['current_observation']['feelslike_c'],
         weather['current_observation']['relative_humidity'],
         weather['current_observation']['wind_string']))
 
