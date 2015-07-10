@@ -184,7 +184,7 @@ boggle.commands = ['boggle', 'thescream']
 
 def yay(phenny, input):
     phenny.say('\o/')
-yay.commands = ['yay', 'woot', 'w00t']
+yay.commands = ['yay', 'woot', 'w00t', 'friday']
 
 
 def shithitsfan(phenny, input):
