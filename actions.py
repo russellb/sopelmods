@@ -249,3 +249,14 @@ dundundun.commands = ['dundundun']
 def meditate(phenny, input):
     phenny.say('https://vimeo.com/132790897')
 meditate.commands = ['meditate']
+
+
+def roflcopter(phenny, input):
+    phenny.say('        ROFL:ROFL:LOL:ROFL:ROFL')
+    phenny.say('          _________|________')
+    phenny.say(' L       /                 []')
+    phenny.say('LOL====== [] [] [] []  USA   \\')
+    phenny.say(' L       _____________________|')
+    phenny.say('                  | |')
+    phenny.say('               —————————–/-/')
+roflcopter.commands = ['rofl', 'roflcopter']
