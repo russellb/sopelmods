@@ -260,3 +260,7 @@ def roflcopter(phenny, input):
     phenny.say('                  | |')
     phenny.say('               —————————–/-/')
 roflcopter.commands = ['rofl', 'roflcopter']
+
+def nakedping(phenny, input):
+    phenny.say('https://blogs.gnome.org/markmc/2014/02/20/naked-pings/')
+nakedping.command = ['nakedping']
