@@ -1,9 +1,10 @@
 import urllib
 from xml.dom.minidom import parseString
+from sopel import module
 
 
-def devexcuse(phenny, input):
-    phenny.say(parseString(
+def devexcuse(bot, input):
+    bot.say(parseString(
         urllib.urlopen('http://developerexcuses.com').read().replace('&', '')).
         getElementsByTagName('body')[0].getElementsByTagName('div')[0].
         getElementsByTagName('center')[0].getElementsByTagName('a')[0].

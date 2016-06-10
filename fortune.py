@@ -1,7 +1,8 @@
 import commands
+from sopel import module
 
-def fortune(phenny, input):
+def fortune(bot, input):
    fortune = commands.getoutput('fortune')
    for line in fortune.rsplit("\n"):
-      phenny.say(line)
+      bot.say(line)
 fortune.commands = ['fortune']

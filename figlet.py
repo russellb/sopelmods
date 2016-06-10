@@ -1,7 +1,8 @@
 from pyfiglet import Figlet
+from sopel import module
 
-def figlet(phenny, input):
+def figlet(bot, input):
    f = Figlet()
    for l in f.renderText(input.group(2) or "").rsplit("\n"):
-      phenny.say(l)
+      bot.say(l)
 figlet.commands = [ 'figlet' ]

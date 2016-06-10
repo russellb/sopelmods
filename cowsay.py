@@ -4,6 +4,7 @@
 
 import sys
 import textwrap
+from sopel import module
 
 def cowsay(str, length=40):
     return build_bubble(str, length) + build_cow()
@@ -54,10 +55,10 @@ def get_border(lines, index):
         return [ "|", "|" ]
 
 
-def cowsay_cmd(phenny, input):
+def cowsay_cmd(bot, input):
     input_text = input.group(2)
     if input_text:
         moo = cowsay(input_text)
         for l in moo.rsplit('\n'):
-            phenny.say(l)
+            bot.say(l)
 cowsay_cmd.commands = ['cowsay']

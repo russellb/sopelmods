@@ -2,9 +2,9 @@
 
 from random import choice
 import time
+from sopel import module
 
-
-def table(phenny, input):
+def table(bot, input):
     rage = [
         '(╯°□°）╯︵ ┻━┻',
         '┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻',
@@ -12,16 +12,16 @@ def table(phenny, input):
         '(╯°□°)╯︵ ┻━┻ ︵ ╯(°□° ╯)',
         '(ノಠ益ಠ)ノ彡┻━┻',
     ]
-    phenny.say(choice(rage))
+    bot.say(choice(rage))
 table.commands = ['table', 'rage']
 
 
-def untable(phenny, input):
-    phenny.say('┬┬ ノ(゜-゜ノ)')
+def untable(bot, input):
+    bot.say('┬┬ ノ(゜-゜ノ)')
 untable.commands = ['untable', 'putitback', 'unrage']
 
 
-def raaage(phenny, input):
+def raaage(bot, input):
     rage = [
         '┬──┬ ノ( ゜-゜ノ)',
         '┬──┬◡ﾉ(° -°ﾉ)',
@@ -31,236 +31,236 @@ def raaage(phenny, input):
         '(/ﾟДﾟ)/',
     ]
     for r in rage:
-        phenny.say(r)
+        bot.say(r)
         time.sleep(0.5)
 raaage.commands = ['raaage', 'RAAAGE', 'ultrarage']
 
 
-def dapper(phenny, input):
-    phenny.say('┌─┐')
-    phenny.say('┴─┴')
-    phenny.say('ಠ_ರೃ')
+def dapper(bot, input):
+    bot.say('┌─┐')
+    bot.say('┴─┴')
+    bot.say('ಠ_ರೃ')
 dapper.commands = ['dapper']
 
-def smile(phenny, input):
+def smile(bot, input):
     joyful_emotes = ['🙌', '😀', '😁', '😂', '😃', '😄', '😅', '\(סּںסּَ`)/ۜ', '【ツ】']
-    phenny.say(choice(joyful_emotes))
+    bot.say(choice(joyful_emotes))
 smile.commands = ['huzzuh', 'awesome', 'happy', 'smile']
 
 
-def finger(phenny, input):
+def finger(bot, input):
     fingers = ['┌∩┐(◣_◢)┌∩┐', '凸(¬‿¬)凸']
-    phenny.say(choice(fingers))
+    bot.say(choice(fingers))
 finger.commands = ['finger']
 
 
-def umadbro(phenny, input):
-    phenny.say('¯\_(ツ)_/¯')
+def umadbro(bot, input):
+    bot.say('¯\_(ツ)_/¯')
 umadbro.commands = ['umadbro', 'shrug', 'idunno', 'notsure']
 
 
-def troll(phenny, input):
-    phenny.say('░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░')
-    phenny.say('░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░')
-    phenny.say('░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░')
-    phenny.say('░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░')
-    phenny.say('░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░')
-    phenny.say('█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█')
-    phenny.say('█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█')
-    phenny.say('░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░')
-    phenny.say('░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░')
-    phenny.say('░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░')
-    phenny.say('░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░')
-    phenny.say('░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░')
-    phenny.say('░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░')
-    phenny.say('░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░')
-    phenny.say('░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░')
+def troll(bot, input):
+    bot.say('░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░')
+    bot.say('░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░')
+    bot.say('░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░')
+    bot.say('░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░')
+    bot.say('░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░')
+    bot.say('█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█')
+    bot.say('█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█')
+    bot.say('░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░')
+    bot.say('░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░')
+    bot.say('░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░')
+    bot.say('░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░')
+    bot.say('░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░')
+    bot.say('░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░')
+    bot.say('░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░')
+    bot.say('░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░')
 troll.commands = ['troll','trollface']
 
-def trololo(phenny, input):
-    phenny.say('http://trololololololololololo.com/')
+def trololo(bot, input):
+    bot.say('http://trololololololololololo.com/')
 trololo.commands = ['trolo', 'trololo', 'trolololo']
 
-def notbad(phenny, input):
-    phenny.say('░░░░░░░░░▄██████████▄▄░░░░░░░░')
-    phenny.say('░░░░░░▄█████████████████▄░░░░░')
-    phenny.say('░░░░░██▀▀▀░▀▀▀▀▀▀▀████████░░░░')
-    phenny.say('░░░░██░░░░░░░░░░░░░░███████░░░')
-    phenny.say('░░░██░░░░░░░░░░░░░░░████████░░')
-    phenny.say('░░░█▀░░░░░░░░░░░░░░░▀███████░░')
-    phenny.say('░░░█▄▄██▄░░░▀█████▄░░▀██████░░')
-    phenny.say('░░░█▀███▄▀░░░▄██▄▄█▀░░░█████▄░')
-    phenny.say('░░░█░░▀▀█░░░░░▀▀░░░▀░░░██░░▀▄█')
-    phenny.say('░░░█░░░█░░░▄░░░░░░░░░░░░░██░██')
-    phenny.say('░░░█░░█▄▄▄▄█▄▀▄░░░░░░░░░▄▄█▄█░')
-    phenny.say('░░░█░░█▄▄▄▄▄▄░▀▄░░░░░░░░▄░▀█░░')
-    phenny.say('░░░█░█▄████▀██▄▀░░░░░░░█░▀▀░░░')
-    phenny.say('░░░░██▀░▄▄▄▄░░░▄▀░░░░▄▀█░░░░░░')
-    phenny.say('░░░░░█▄▀░░░░▀█▀█▀░▄▄▀░▄▀░░░░░░')
-    phenny.say('░░░░░▀▄░░░░░░░░▄▄▀░░░░█░░░░░░░')
-    phenny.say('░░░░░▄██▀▀▀▀▀▀▀░░░░░░░█▄░░░░░░')
-    phenny.say('░░▄▄▀░█░▀▄░░░░░░░░░░▄▀░▀▀▄░░░░')
-    phenny.say('▄▀▀░░░███▄█▄░░░░░░▄▀░░░░░░█▄░░')
-    phenny.say('█░░░░░███▄█▄░░░░░░▄▀░░░░░░░▀█▄')
+def notbad(bot, input):
+    bot.say('░░░░░░░░░▄██████████▄▄░░░░░░░░')
+    bot.say('░░░░░░▄█████████████████▄░░░░░')
+    bot.say('░░░░░██▀▀▀░▀▀▀▀▀▀▀████████░░░░')
+    bot.say('░░░░██░░░░░░░░░░░░░░███████░░░')
+    bot.say('░░░██░░░░░░░░░░░░░░░████████░░')
+    bot.say('░░░█▀░░░░░░░░░░░░░░░▀███████░░')
+    bot.say('░░░█▄▄██▄░░░▀█████▄░░▀██████░░')
+    bot.say('░░░█▀███▄▀░░░▄██▄▄█▀░░░█████▄░')
+    bot.say('░░░█░░▀▀█░░░░░▀▀░░░▀░░░██░░▀▄█')
+    bot.say('░░░█░░░█░░░▄░░░░░░░░░░░░░██░██')
+    bot.say('░░░█░░█▄▄▄▄█▄▀▄░░░░░░░░░▄▄█▄█░')
+    bot.say('░░░█░░█▄▄▄▄▄▄░▀▄░░░░░░░░▄░▀█░░')
+    bot.say('░░░█░█▄████▀██▄▀░░░░░░░█░▀▀░░░')
+    bot.say('░░░░██▀░▄▄▄▄░░░▄▀░░░░▄▀█░░░░░░')
+    bot.say('░░░░░█▄▀░░░░▀█▀█▀░▄▄▀░▄▀░░░░░░')
+    bot.say('░░░░░▀▄░░░░░░░░▄▄▀░░░░█░░░░░░░')
+    bot.say('░░░░░▄██▀▀▀▀▀▀▀░░░░░░░█▄░░░░░░')
+    bot.say('░░▄▄▀░█░▀▄░░░░░░░░░░▄▀░▀▀▄░░░░')
+    bot.say('▄▀▀░░░███▄█▄░░░░░░▄▀░░░░░░█▄░░')
+    bot.say('█░░░░░███▄█▄░░░░░░▄▀░░░░░░░▀█▄')
 notbad.commands = ['notbad']
 
 
-def dealwithit(phenny, input):
-    phenny.say('(•_•)')
-    phenny.say('( •_•)>⌐■-■')
-    phenny.say('(⌐■_■)')
+def dealwithit(bot, input):
+    bot.say('(•_•)')
+    bot.say('( •_•)>⌐■-■')
+    bot.say('(⌐■_■)')
 dealwithit.commands = ['dealwithit']
 
 
-def pirate(phenny, input):
-    phenny.say('(•_•)')
-    phenny.say('( •_•)>⌐■')
-    phenny.say('(⌐■_•)')
+def pirate(bot, input):
+    bot.say('(•_•)')
+    bot.say('( •_•)>⌐■')
+    bot.say('(⌐■_•)')
 pirate.commands = ['pirate', 'pirateup']
 
 
-def glare(phenny, input):
-    phenny.say('ಠ_ಠ')
+def glare(bot, input):
+    bot.say('ಠ_ಠ')
 glare.commands = ['glare', 'eyes', 'disapprove']
 
 
-def facepalm(phenny, input):
-    phenny.say('(>ლ)')
+def facepalm(bot, input):
+    bot.say('(>ლ)')
 facepalm.commands = ['facepalm']
 
 
-def tothemoon(phenny, input):
-   phenny.say('┗(°0°)┛')
+def tothemoon(bot, input):
+   bot.say('┗(°0°)┛')
 tothemoon.commands = ['tothemoon']
 
 
-def postal(phenny, input):
+def postal(bot, input):
     choices = [
         "' ̿'\̵͇̿̿\з=(◕_◕)=ε/̵͇̿̿/'̿'̿ ̿'",
         "¯¯̿̿¯̿̿'̿̿̿̿̿̿̿'̿̿'̿̿̿̿̿'̿̿̿)͇̿̿)̿̿̿̿ '̿̿̿̿̿̿\̵͇̿̿\=(•̪̀●́)=o/̵͇̿̿/'̿̿ ̿ ̿̿",
     ]
-    phenny.say(choice(choices))
+    bot.say(choice(choices))
 postal.commands = ['postal']
 
 
-def ping(phenny, input):
-    phenny.say('( •_•)O*¯`·.   |')
+def ping(bot, input):
+    bot.say('( •_•)O*¯`·.   |')
 ping.commands = ['ping']
 
 
-def pong(phenny, input):
-    phenny.say('               |   .·´¯`°Q(•_• )')
+def pong(bot, input):
+    bot.say('               |   .·´¯`°Q(•_• )')
 pong.commands = ['pong']
 
 
-def hi(phenny, input):
+def hi(bot, input):
     choices = ['o/', '\o']
-    phenny.say(choice(choices))
+    bot.say(choice(choices))
 hi.commands = ['hi', 'ohai', 'hello', 'greetings', 'hola', 'bonjour']
 
 
-def fail(phenny, input):
-    phenny.say('http://www.youtube.com/watch?v=WtNHuqHWefU')
+def fail(bot, input):
+    bot.say('http://www.youtube.com/watch?v=WtNHuqHWefU')
 fail.commands = ['fail', 'dummy', 'dumber', 'stupid']
 
 
-def boggle(phenny, input):
-    phenny.say('           .--.')
-    phenny.say('         .\'    \'.')
-    phenny.say('        /  ~~~~  \\')
-    phenny.say('       ( __    __ )')
-    phenny.say('      /|<o->  <o->|\\')
-    phenny.say('     ( |    ^^    | )')
-    phenny.say('    _ ) \   __   / /')
-    phenny.say('   /##\  \_(__)_/ /')
-    phenny.say('  /####) )#\__// (')
-    phenny.say(' /####( |##| |#\  \\')
-    phenny.say('(#####| |##(_/##\_/\\')
-    phenny.say(' \####(_)###########\\')
-    phenny.say('   \#################)')
-    phenny.say('    \/##############/')
+def boggle(bot, input):
+    bot.say('           .--.')
+    bot.say('         .\'    \'.')
+    bot.say('        /  ~~~~  \\')
+    bot.say('       ( __    __ )')
+    bot.say('      /|<o->  <o->|\\')
+    bot.say('     ( |    ^^    | )')
+    bot.say('    _ ) \   __   / /')
+    bot.say('   /##\  \_(__)_/ /')
+    bot.say('  /####) )#\__// (')
+    bot.say(' /####( |##| |#\  \\')
+    bot.say('(#####| |##(_/##\_/\\')
+    bot.say(' \####(_)###########\\')
+    bot.say('   \#################)')
+    bot.say('    \/##############/')
 boggle.commands = ['boggle', 'thescream']
 
 
-def yay(phenny, input):
-    phenny.say('\o/')
+def yay(bot, input):
+    bot.say('\o/')
 yay.commands = ['yay', 'woot', 'w00t', 'friday']
 
 
-def shithitsfan(phenny, input):
-    phenny.say('https://www.youtube.com/watch?v=aZdp46Jen_w')
+def shithitsfan(bot, input):
+    bot.say('https://www.youtube.com/watch?v=aZdp46Jen_w')
 shithitsfan.commands = ['shithitsfan']
 
 
-def fishslap(phenny, input):
-    phenny.say('https://www.youtube.com/watch?v=IhJQp-q1Y1s')
+def fishslap(bot, input):
+    bot.say('https://www.youtube.com/watch?v=IhJQp-q1Y1s')
 fishslap.commands = ['fishslap']
 
 
-def makeitrain(phenny, input):
-    phenny.say('[̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅]')
-    phenny.say('')
-    phenny.say('[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]')
-    phenny.say('')
-    phenny.say('[̲̅$̲̅(̲̅1̲̅)̲̅$̲̅]')
+def makeitrain(bot, input):
+    bot.say('[̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅]')
+    bot.say('')
+    bot.say('[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]')
+    bot.say('')
+    bot.say('[̲̅$̲̅(̲̅1̲̅)̲̅$̲̅]')
 makeitrain.commands = ['makeitrain']
 
 
-def failboat(phenny, input):
-    phenny.say('    __4_____')
-    phenny.say(' _  \F\A\I\L\\')
-    phenny.say('<\'\ /_/_/_/_/')
-    phenny.say(' ((____!_____/)')
-    phenny.say(' \\0\\0\\0\\0\\0\/')
-    phenny.say(' ~~~~~~~~~~~~~~~')
+def failboat(bot, input):
+    bot.say('    __4_____')
+    bot.say(' _  \F\A\I\L\\')
+    bot.say('<\'\ /_/_/_/_/')
+    bot.say(' ((____!_____/)')
+    bot.say(' \\0\\0\\0\\0\\0\/')
+    bot.say(' ~~~~~~~~~~~~~~~')
 failboat.commands = ['failboat']
 
 
-def beerme(phenny, input):
-    phenny.say('     ,-"-.__,-"-.__,-"-..')
-    phenny.say('    ( C>  )( C>  )( C>  ))')
-    phenny.say('   /.`-_-\'||`-_-\'||`-_-\'/')
-    phenny.say('  /-"-.--,-"-.--,-"-.--/|')
-    phenny.say(' ( C>  )( C>  )( C>  )/ |')
-    phenny.say('(|`-_-\',.`-_-\',.`-_-\'/  |')
-    phenny.say(' `-----++-----++----\'|  |')
-    phenny.say(' |     ||     ||     |-\'')
-    phenny.say(' |     ||     ||     |')
-    phenny.say(' |     ||     ||     |')
-    phenny.say('  `-_-\'  `-_-\'  `-_-\'')
+def beerme(bot, input):
+    bot.say('     ,-"-.__,-"-.__,-"-..')
+    bot.say('    ( C>  )( C>  )( C>  ))')
+    bot.say('   /.`-_-\'||`-_-\'||`-_-\'/')
+    bot.say('  /-"-.--,-"-.--,-"-.--/|')
+    bot.say(' ( C>  )( C>  )( C>  )/ |')
+    bot.say('(|`-_-\',.`-_-\',.`-_-\'/  |')
+    bot.say(' `-----++-----++----\'|  |')
+    bot.say(' |     ||     ||     |-\'')
+    bot.say(' |     ||     ||     |')
+    bot.say(' |     ||     ||     |')
+    bot.say('  `-_-\'  `-_-\'  `-_-\'')
 beerme.commands = ['beerme']
 
 
-def halibut(phenny, input):
-    phenny.say('><}}}}}*>')
+def halibut(bot, input):
+    bot.say('><}}}}}*>')
 halibut.commands = ['halibut']
 
 
-def pabelanger(phenny, input):
-    phenny.say('http://media.giphy.com/media/R4mn3MfNRmlCU/200.gif')
+def pabelanger(bot, input):
+    bot.say('http://media.giphy.com/media/R4mn3MfNRmlCU/200.gif')
 pabelanger.commands = ['pabelanger', 'paul', 'woahdance']
 
 
-def dundundun(phenny, input):
-    phenny.say('https://www.youtube.com/watch?v=cphNpqKpKc4')
+def dundundun(bot, input):
+    bot.say('https://www.youtube.com/watch?v=cphNpqKpKc4')
 dundundun.commands = ['dundundun']
 
 
-def meditate(phenny, input):
-    phenny.say('https://vimeo.com/132790897')
+def meditate(bot, input):
+    bot.say('https://vimeo.com/132790897')
 meditate.commands = ['meditate']
 
 
-def roflcopter(phenny, input):
-    phenny.say('        ROFL:ROFL:LOL:ROFL:ROFL')
-    phenny.say('          _________|________')
-    phenny.say(' L       /                 []')
-    phenny.say('LOL====== [] [] [] []  USA   \\')
-    phenny.say(' L       _____________________|')
-    phenny.say('                  | |')
-    phenny.say('               —————————–/-/')
+def roflcopter(bot, input):
+    bot.say('        ROFL:ROFL:LOL:ROFL:ROFL')
+    bot.say('          _________|________')
+    bot.say(' L       /                 []')
+    bot.say('LOL====== [] [] [] []  USA   \\')
+    bot.say(' L       _____________________|')
+    bot.say('                  | |')
+    bot.say('               —————————–/-/')
 roflcopter.commands = ['rofl', 'roflcopter']
 
-def nakedping(phenny, input):
-    phenny.say('https://blogs.gnome.org/markmc/2014/02/20/naked-pings/')
+def nakedping(bot, input):
+    bot.say('https://blogs.gnome.org/markmc/2014/02/20/naked-pings/')
 nakedping.commands = ['nakedping']

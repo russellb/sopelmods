@@ -13,6 +13,6 @@
 #    under the License.
 
 
-class Phenny(object):
+class Sopel(object):
     def say(self, msg):
         print msg
