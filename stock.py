@@ -15,6 +15,7 @@
 import urllib
 import re
 import sys
+from sopel import module
 
 
 def get_quote(symbol):
@@ -38,12 +39,7 @@ def get_quote(symbol):
     return quote
 
 
-def quote(phenny, input):
+def quote(bot, input):
     symbol = input.group(2)
-    phenny.say(get_quote(symbol))
+    bot.say(get_quote(symbol))
 quote.commands = ['quote']
-
-
-if __name__ == '__main__':
-    import tests.utils
-    quote(tests.utils.Phenny(), re.match('()(.*)', sys.argv[1]))

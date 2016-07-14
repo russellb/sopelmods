@@ -1,6 +1,7 @@
 import json
 import re
 import urllib
+from sopel import module
 
 
 def format_defn(defn, num, max):
@@ -12,11 +13,11 @@ def format_defn(defn, num, max):
     return lines
 
 
-def urban(phenny, input):
+def urban(bot, input):
     baseurl = 'http://api.urbandictionary.com/v0/'
 
     if not input.group(2):
-        phenny.say('Usage: .urban <word> [definition number]')
+        bot.say('Usage: .urban <word> [definition number]')
         return
 
     input = input.group(2).strip()
@@ -45,20 +46,20 @@ def urban(phenny, input):
     try:
         defn = result['list'][idx]
     except IndexError:
-        phenny.say('No definition %i of %i for %s' % (idx, max, input))
+        bot.say('No definition %i of %i for %s' % (idx, max, input))
         return
 
     lines = format_defn(defn, num, max)
     for line in lines:
-        phenny.say(line)
+        bot.say(line)
 urban.commands = ['urban']
 
 
 if __name__ == '__main__':
     import sys
 
-    class Phenny(object):
+    class Sopel(object):
         def say(self, msg):
             print msg
 
-    urban(Phenny(), re.match('()(.*)', sys.argv[1]))
+    urban(Sopel(), re.match('()(.*)', sys.argv[1]))

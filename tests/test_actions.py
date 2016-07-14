@@ -23,7 +23,7 @@ class ActionsTestCase(unittest.TestCase):
 
     def _test_action(self, action):
         func = getattr(actions, action)
-        func(tests.utils.Phenny(), '')
+        func(tests.utils.Sopel(), '')
         if not hasattr(func, 'commands'):
             raise Exception('Missing commands attribute on function %s' %
                             action)

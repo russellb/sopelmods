@@ -2,9 +2,10 @@ import json
 import re
 import sys
 import urllib
+from sopel import module
 
 
-def wuweather_full(phenny, input, verbose=True):
+def wuweather_full(bot, input, verbose=True):
     loc = input.group(2)
     pws = loc.startswith('pws:') and '1' or '0'
 
@@ -18,7 +19,7 @@ def wuweather_full(phenny, input, verbose=True):
 
     #does the response contain an error
     if 'error' in weather['response']:
-        phenny.say("wuweather: %s" % weather['response']['error']['description'])
+        bot.say("wuweather: %s" % weather['response']['error']['description'])
         return
     #does the response contain extra 'results'
     elif 'results' in weather['response']:
@@ -30,7 +31,7 @@ def wuweather_full(phenny, input, verbose=True):
             else:
                 output += "/ %s %s %s " % (index['city'], index['state'], index['country'])                
             counter += 1
-        phenny.say(output)
+        bot.say(output)
         return
 
     #if we made it here, everything should be good
@@ -58,7 +59,7 @@ def wuweather_full(phenny, input, verbose=True):
 
         if verbose:
             #output sunrise w/ almanac if available
-            phenny.say("%s %sSunrise: %s:%s Sunset: %s:%s" % \
+            bot.say("%s %sSunrise: %s:%s Sunset: %s:%s" % \
             (city,
             almanac_output,
             weather['moon_phase']['sunrise']['hour'],
@@ -67,7 +68,7 @@ def wuweather_full(phenny, input, verbose=True):
             weather['moon_phase']['sunset']['minute']))
 
         #output the current weather
-        phenny.say("%s Current: %s %sF, %sC (Feels like: %sF, %sC), Humidity: %s, Wind: %s" % \
+        bot.say("%s Current: %s %sF, %sC (Feels like: %sF, %sC), Humidity: %s, Wind: %s" % \
         (city,
         weather['current_observation']['weather'],
         weather['current_observation']['temp_f'],
@@ -90,7 +91,7 @@ def wuweather_full(phenny, input, verbose=True):
             else:
                 day = index['date']['weekday']
 
-            phenny.say("%s %s: %s [POP: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s%%, Min: %s%%, Avg: %s%%] Wind: [%smph, %skph]" % \
+            bot.say("%s %s: %s [POP: %s%%] [High: %sF, %sC Low: %sF, %sC] Humidity: [Max: %s%%, Min: %s%%, Avg: %s%%] Wind: [%smph, %skph]" % \
             (city,
             day,
             index['conditions'],
@@ -106,21 +107,21 @@ def wuweather_full(phenny, input, verbose=True):
             index['avewind']['kph']))
             counter +=1
             if counter >= 3: break
-        phenny.say("%s URL: %s" % (city, weather['current_observation']['forecast_url']))
+        bot.say("%s URL: %s" % (city, weather['current_observation']['forecast_url']))
     except:
         return
 
 
-def wuweatherverbose(phenny, input):
-    return wuweather_full(phenny, input)
+def wuweatherverbose(bot, input):
+    return wuweather_full(bot, input)
 wuweatherverbose.commands = ['wuweatherverbose']
 
 
-def wuweather(phenny, input):
-    return wuweather_full(phenny, input, verbose=False)
+def wuweather(bot, input):
+    return wuweather_full(bot, input, verbose=False)
 wuweather.commands = ['wuweather']
 
 
 if __name__ == '__main__':
     import tests.utils
-    wuweather(tests.utils.Phenny(), re.match('()(.*)', sys.argv[1]))
+    wuweather(tests.utils.Sopel(), re.match('()(.*)', sys.argv[1]))

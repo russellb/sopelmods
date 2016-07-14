@@ -1,10 +1,9 @@
 import random
-
 import pyjokes
+from sopel import module
 
-
-def pyjoke(phenny, input):
+@module.commands('pyjoke')
+def pyjoke(bot, trigger):
     j1 = pyjokes.get_jokes(category='neutral')
     j2 = pyjokes.get_jokes(category='adult')
-    phenny.say(random.choice(j1 + j2))
-pyjoke.commands = ['pyjoke', 'pyjokes']
+    bot.say(random.choice(j1 + j2))

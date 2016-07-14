@@ -1,8 +1,10 @@
-def dance(phenny, input):
-   phenny.say('    <("<)')
-   phenny.say('           <("^)')
-   phenny.say('                  ^("^)')
-   phenny.say('                   (^")^')
-   phenny.say('            (^")>')
-   phenny.say('     (>")>')
+from sopel import module
+
+def dance(bot, input):
+   bot.say('    <("<)')
+   bot.say('           <("^)')
+   bot.say('                  ^("^)')
+   bot.say('                   (^")^')
+   bot.say('            (^")>')
+   bot.say('     (>")>')
 dance.commands = ['dance']

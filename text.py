@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import itertools
+from sopel import module
 
 flip_table = {
     '1': 'Ɩ',
@@ -61,21 +62,21 @@ def _map_by_table(table, text):
     return "".join(table.get(w, w) for w in text)
 
 
-def caps(phenny, input):
-    phenny.say(input.upper())
+def caps(bot, input):
+    bot.say(input.upper())
 caps.commands = ['caps']
 
 
-def reverse(phenny, input):
-     phenny.say(input[::-1])
+def reverse(bot, input):
+     bot.say(input[::-1])
 reverse.commands = ['reverse']
 
 
-def flip(phenny, input):
-    flip_reverse(phenny, input[::-1])
+def flip(bot, input):
+    flip_reverse(bot, input[::-1])
 flip.commands = ['flip']
 
 
-def flip_reverse(phenny, input):
-    phenny.say(_map_by_table(flip_table, input.lower()))
+def flip_reverse(bot, input):
+    bot.say(_map_by_table(flip_table, input.lower()))
 flip_reverse.commands = ['flip_reverse']
