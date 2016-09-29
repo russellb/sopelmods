@@ -33,7 +33,7 @@ def raaage(bot, input):
     for r in rage:
         bot.say(r)
         time.sleep(0.5)
-raaage.commands = ['raaage', 'RAAAGE', 'ultrarage']
+raaage.commands = ['raaage', 'ultrarage']
 
 
 def dapper(bot, input):
